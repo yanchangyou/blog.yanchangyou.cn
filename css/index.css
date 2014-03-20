@@ -1,0 +1,116 @@
+
+body {
+	background : #e3e3e3;
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+li {
+	list-style-type : none;
+}
+
+.t {
+	font-weight:bold;
+}
+
+.w-1 .t {
+	text-align: center;
+	font-size: 40px;
+}
+
+.s-1 > li {
+	width : 25%;
+	float: left;
+}
+
+.w-2 > .t {
+	font-size: 25px;
+}
+
+.w-2 .t:hover{
+	background : #fff;
+	transition: 0.5s;
+}
+.w-3:hover {
+	background : #fff;
+	transition: 1.5s;
+}
+
+/*增加动画效果*/
+.w-2 >.c  {
+	display:none;
+	transition: 1.5s;
+}
+.w-2:hover>.c {
+	display: block;
+	transition: 1.5s;
+}
+
+
+/*图片动画*/
+
+img{
+    transition: 0.6s
+}
+
+img {
+	width : 60px;
+	height : 30px;
+}
+
+#id2014032101321:hover img {
+	width : 668px;
+	height : 311px;
+}
+
+#id2014032101616:hover img {
+	width : 640px;
+	height : 853px;
+}
+
+#id2014032101346:hover img {
+	width : 296;
+	height : 186;
+}
+
+
+#id2014032101247:hover img {
+	width : 228;
+	height : 47;
+}
+
+
+#id2014032101308:hover img {
+	width : 232;
+	height : 163;
+}
+
+
+#id2014032101346:hover img {
+	width : 296;
+	height : 186;
+}
+
+#id2014032105357:hover img {
+	width : 660;
+	height : 311;
+}
+
+#id2014032105708 img {
+	width : 63;
+	height : 11;
+}
+
+
+#id2014032105708:hover img {
+	width : 126;
+	height : 22;
+}
+
+#id2014032110029:hover img {
+	width : 563;
+	height : 423;
+}
+
+
+
