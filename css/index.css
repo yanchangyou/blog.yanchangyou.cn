@@ -46,6 +46,9 @@ li {
 	transition: 1.5s;
 }
 
+.w-3 .c {
+	margin-left: 50px;
+}
 
 /*图片动画*/
 
