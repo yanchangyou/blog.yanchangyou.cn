@@ -36,13 +36,10 @@ li {
 	transition: 1.5s;
 }
 
-<<<<<<< HEAD
-=======
 .w-3 .c {
 	margin-left: 50px;
 }
 
->>>>>>> origin/gh-pages
 /*增加动画效果*/
 .w-2 >.c  {
 	display:none;
