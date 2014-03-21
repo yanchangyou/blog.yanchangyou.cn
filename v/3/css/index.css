@@ -2,6 +2,7 @@
 body {
 	margin: 0px 0px;
 	padding: 0px 0px;
+	overflow: hidden;
 }
 
 .space {
@@ -10,39 +11,157 @@ body {
 	height : 100%;
 }
 
-.family {
+.space  div{
+	top:50%;
+	left:50%;
+	position:absolute;
+}
+
+.container {
+
+	background : #888;
+	
+    animation-play-state: running;
+    -webkit-animation-play-state: running;    
+}
+
+.container:hover {
+
+	background : #eee;
+	
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+	
+	transition: 3s;
+}
+
+#all-container {
+
+	background : #111;
+
+    -moz-border-radius: 240px;
+    -webkit-border-radius: 240px;
+    border-radius: 240px;
+	
+	width : 480px;
+	height : 480px;
+	margin-left:-240px;
+	margin-top:-240px;
+	
+
+    animation: spin 80s linear infinite;
+    -webkit-animation: spin 80s linear infinite;
+}
+
+
+#family-container {
 
     -moz-border-radius: 120px;
     -webkit-border-radius: 120px;
     border-radius: 120px;
 	
-	background : #999;
 	width : 240px;
 	height : 240px;
 	margin-left:-120px;
 	margin-top:-120px;
-	position:absolute;
-	top:50%;
-	left:50%;
+	
+    animation: spin 40s linear infinite;
+    -webkit-animation: spin 40s linear infinite;
 }
 
 
-.family  > div {
+#family {
 
-	width : 200px;
-	height : 200px;
-	margin-left:-100px;
-	margin-top:-100px;
-	position:absolute;
-	top:50%;
-	left:50%;
-	font-size:200;
+	width : 180px;
+	height : 180px;
+	margin-left:-90px;
+	margin-top:-90px;
+	font-size: 180;
 	font-weight:900;
-    animation: spin 5s linear infinite;
-    -webkit-animation: spin 5s linear infinite;
-    animation-play-state: running;
-    -webkit-animation-play-state: running;    
+	
 }
+
+
+#me-container {
+
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+	
+	width : 80px;
+	height : 80px;
+	margin-left:-240px;
+	margin-top:-240px;
+	
+    animation: spin 20s linear infinite;
+    -webkit-animation: spin 20s linear infinite;
+}
+
+
+#me {
+
+	width : 60px;
+	height : 60px;
+	margin-left:-30px;
+	margin-top:-30px;
+	font-size:60;
+	font-weight:900;
+	
+}
+
+#wife-container {
+
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+	
+	width : 60px;
+	height : 60px;
+	margin-left:-330px;
+	margin-top:-30px;
+	
+    animation: spin 10s linear infinite;
+    -webkit-animation: spin 15s linear infinite;
+}
+
+
+#wife {
+
+	width : 40px;
+	height : 40px;
+	margin-left:-20px;
+	margin-top:-20px;
+	font-size:40;
+	font-weight:900;
+}
+
+
+#child-container {
+
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+	
+	width : 40px;
+	height : 40px;
+	margin-left:-330px;
+	margin-top:100px;
+	
+    animation: spin 5s linear infinite;
+    -webkit-animation: spin 15s linear infinite;
+}
+
+
+#child {
+
+	width : 30px;
+	height : 30px;
+	margin-left:-15px;
+	margin-top:-15px;
+	font-size:30;
+	font-weight:900;
+}
+
 
 @keyframes spin {
 	to {
@@ -55,11 +174,5 @@ body {
 		-webkit-transform: rotate(1turn);
 	}
 }
-
-.family  > div:hover {
-    animation-play-state: paused;
-    -webkit-animation-play-state: paused;
-}
-
 
 
