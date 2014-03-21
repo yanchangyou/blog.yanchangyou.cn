@@ -35,18 +35,20 @@ body {
 	transition: 3s;
 }
 
+
+
 #all-container {
 
 	background : #0a0a0a;
 
-    -moz-border-radius: 240px;
-    -webkit-border-radius: 240px;
-    border-radius: 240px;
+    -moz-border-radius: 400px;
+    -webkit-border-radius: 400px;
+    border-radius: 400px;
 	
-	width : 480px;
-	height : 480px;
-	margin-left:-240px;
-	margin-top:-240px;
+	width : 800px;
+	height : 800px;
+	margin-left:-400px;
+	margin-top:-400px;
 	
 
     animation: spin 80s linear infinite;
@@ -54,6 +56,16 @@ body {
 	
 }
 
+#all-container:hover,
+#family-container:hover,
+#me-container:hover,
+#wife-container:hover,
+#child-container:hover {
+
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+	
+}
 
 #family-container {
 
@@ -72,7 +84,6 @@ body {
 	background-image:url(../img/star/family.jpg);
 	
 }
-
 
 #family {
 
