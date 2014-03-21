@@ -5,6 +5,10 @@ body {
 	overflow: hidden;
 }
 
+div {
+	color: #fff;
+}
+
 .space {
 	background : #000;
 	width : 100%;
@@ -34,8 +38,6 @@ body {
 	
 	transition: 3s;
 }
-
-
 
 #all-container {
 
@@ -82,7 +84,6 @@ body {
     -webkit-animation: spin 40s linear infinite;
 	
 	background-image:url(../img/star/family.jpg);
-	
 }
 
 #family {
@@ -96,6 +97,15 @@ body {
 	
 }
 
+#family .words {
+	display:none;
+	margin-left:-90px;
+	margin-top:90px;
+}
+
+#family:hover .words {
+	display:block;
+}
 
 #me-container {
 
@@ -114,7 +124,6 @@ body {
 	background-image:url(../img/star/me.jpg);
 }
 
-
 #me {
 
 	width : 60px;
@@ -122,8 +131,17 @@ body {
 	margin-left:-30px;
 	margin-top:-30px;
 	font-size:60;
-	font-weight:900;
-	
+	font-weight:900;	
+}
+
+#me .words {
+	display:none;
+	margin-left:-30px;
+	margin-top:30px;
+}
+
+#me:hover .words {
+	display:block;
 }
 
 #wife-container {
@@ -143,7 +161,6 @@ body {
 	background-image:url(../img/star/wife.jpg);
 }
 
-
 #wife {
 
 	width : 40px;
@@ -154,6 +171,15 @@ body {
 	font-weight:900;
 }
 
+#wife .words {
+	display:none;
+	margin-left:-20px;
+	margin-top:20px;
+}
+
+#wife:hover .words {
+	display:block;
+}
 
 #child-container {
 
@@ -172,7 +198,6 @@ body {
 	background-image:url(../img/star/child.jpg);
 }
 
-
 #child {
 
 	width : 30px;
@@ -183,6 +208,15 @@ body {
 	font-weight:900;
 }
 
+#child .words {
+	display:none;
+	margin-left:-15px;
+	margin-top:15px;
+}
+
+#child:hover .words {
+	display:block;
+}
 
 @keyframes spin {
 	to {
