@@ -190,10 +190,10 @@ div {
 	width : 40px;
 	height : 40px;
 	margin-left:-330px;
-	margin-top:100px;
+	margin-top:15px;
 	
     animation: spin 5s linear infinite;
-    -webkit-animation: spin 15s linear infinite;
+    -webkit-animation: spin 5s linear infinite;
 	
 	background-image:url(../img/star/child.jpg);
 }
