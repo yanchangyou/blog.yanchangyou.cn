@@ -187,12 +187,14 @@ body {
 @keyframes spin {
 	to {
 		-webkit-transform: rotate(1turn);
+		-ms-transform: rotate(1turn);
 	}
 }
 
 @-webkit-keyframes spin {
 	to {
 		-webkit-transform: rotate(1turn);
+		-ms-transform: rotate(1turn);
 	}
 }
 
