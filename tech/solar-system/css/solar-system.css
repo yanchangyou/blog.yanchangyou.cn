@@ -1,0 +1,64 @@
+body {
+	
+	margin:0px;
+	padding:0px;
+}
+
+#space {
+	
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/space.jpg);
+}
+
+.star {
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	animation-play-state: running;
+	-webkit-animation-play-state: running;
+}
+.star:hover,.star img:hover {
+	animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+}
+
+#star-sun {
+	margin-top: -37;
+	margin-left: -37;
+	width: 74;
+	height: 74;
+	animation: spin 254s linear infinite;
+	-webkit-animation: spin 254s linear infinite;
+}
+
+#sun img {
+	width: 74;
+	height: 74;
+	-moz-border-radius: 37px;
+	-webkit-border-radius: 37px;
+	border-radius: 37px;
+	animation: spin 25s linear infinite;
+	-webkit-animation: spin 25s linear infinite;
+	background-image: url(../img/sun.jpg);
+}
+
+#star-mercury{	margin-top:	-50 	;	margin-left:	-50 	;	height: 	100 	;	width: 	100 	;	animation: spin 1s linear infinite;	-webkit-animation: spin 1s linear infinite;	}	#mercury img{	animation: spin 59s linear infinite;	-webkit-animation: spin 59s linear infinite;	height: 10px;width: 10px;	-moz-border-radius: 5px;	-webkit-border-radius: 5px;	border-radius:  5px;	background-image: url(../img/mercury.jpg);}
+#star-venus{	margin-top:	-70 	;	margin-left:	-70 	;	height: 	140 	;	width: 	140 	;	animation: spin 2s linear infinite;	-webkit-animation: spin 2s linear infinite;	}	#venus img{	animation: spin 243s linear infinite;	-webkit-animation: spin 243s linear infinite;	height: 16px;width: 16px;	-moz-border-radius: 8px;	-webkit-border-radius: 8px;	border-radius:  8px;	background-image: url(../img/venus.jpg);}
+#star-earth{	margin-top:	-90 	;	margin-left:	-90 	;	height: 	180 	;	width: 	180 	;	animation: spin 4s linear infinite;	-webkit-animation: spin 4s linear infinite;	}	#earth img{	animation: spin 1s linear infinite;	-webkit-animation: spin 0.997s linear infinite;	height: 16px;width: 16px;	-moz-border-radius: 8px;	-webkit-border-radius: 8px;	border-radius:  8px;	background-image: url(../img/earth.jpg);}
+#star-mars{	margin-top:	-120 	;	margin-left:	-120 	;	height: 	240 	;	width: 	240 	;	animation: spin 7s linear infinite;	-webkit-animation: spin 7s linear infinite;	}	#mars img{	animation: spin 1.03s linear infinite;	-webkit-animation: spin 1.026s linear infinite;	height: 12px;width: 12px;	-moz-border-radius: 6px;	-webkit-border-radius: 6px;	border-radius:  6px;	background-image: url(../img/mars.jpg);}
+#star-jupiter{	margin-top:	-175 	;	margin-left:	-175 	;	height: 	350 	;	width: 	350 	;	animation: spin 43s linear infinite;	-webkit-animation: spin 43s linear infinite;	}	#jupiter img{	animation: spin 0.41s linear infinite;	-webkit-animation: spin 0.41s linear infinite;	height: 42px;width: 42px;	-moz-border-radius: 21px;	-webkit-border-radius: 21px;	border-radius:  21px;	background-image: url(../img/jupiter.jpg);}
+#star-saturn{	margin-top:	-200 	;	margin-left:	-200 	;	height: 	400 	;	width: 	400 	;	animation: spin 108s linear infinite;	-webkit-animation: spin 108s linear infinite;	}	#saturn img{	animation: spin 0.44s linear infinite;	-webkit-animation: spin 0.444s linear infinite;	height: 35px;width: 35px;	-moz-border-radius: 17.5px;	-webkit-border-radius: 17.5px;	border-radius:  17.5px;	background-image: url(../img/saturn.jpg);}
+#star-uranus{	margin-top:	-225 	;	margin-left:	-225 	;	height: 	450 	;	width: 	450 	;	animation: spin 307s linear infinite;	-webkit-animation: spin 307s linear infinite;	}	#uranus img{	animation: spin 0.72s linear infinite;	-webkit-animation: spin 0.718s linear infinite;	height: 25px;width: 25px;	-moz-border-radius: 12.5px;	-webkit-border-radius: 12.5px;	border-radius:  12.5px;	background-image: url(../img/uranus.jpg);}
+#star-neptune{	margin-top:	-250 	;	margin-left:	-250 	;	height: 	500 	;	width: 	500 	;	animation: spin 602s linear infinite;	-webkit-animation: spin 602s linear infinite;	}	#neptune img{	animation: spin 0.67s linear infinite;	-webkit-animation: spin 0.671s linear infinite;	height: 25px;width: 25px;	-moz-border-radius: 12.5px;	-webkit-border-radius: 12.5px;	border-radius:  12.5px;	background-image: url(../img/neptune.jpg);}
+
+
+@keyframes spin {to { -webkit-transform:rotate(-1turn);
+	-ms-transform: rotate(-1turn);
+}
+}
+
+@-webkit-keyframes spin {to { -webkit-transform:rotate(-1turn);
+	-ms-transform: rotate(-1turn);
+}
+}
