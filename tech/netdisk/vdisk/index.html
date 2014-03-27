@@ -1,0 +1,47 @@
+<html>
+
+<head>
+<title>微盘测试页面</title>
+</head>
+<body>
+	<h1>微盘测试页面</h1>
+	<br>
+	<br>
+	<ul>
+		<li>
+			<a href="https://auth.sina.com.cn/oauth2/authorize?client_id=1255248993&redirect_uri=http://www.yanchangyou.cn/tech/netdisk/vdisk&response_type=token">/oauth2/authorize</a>
+		</li>
+		<li>
+			<a href="https://api.weipan.cn/2/account/info">/account/info</a>
+		</li>
+		<li>
+			<a href="https://api.weipan.cn/2/delta/basic/sandbox">/delta</a>
+		</li>
+		<li>
+			<a href="https://api.weipan.cn/2/files/basic/sandbox/fileapi/1.jpg">/files (GET)</a>
+		</li>
+		<li>
+			<a href="https://api.weipan.cn/2/files/basic/sandbox/fileapi/1.jpg">/metadata</a>
+		</li>
+		<li>
+			<a href="https://api.weipan.cn/2/media/basic/sandbox/fileapi/1.jpg">授权</a>
+		</li>
+		<li>
+			<a href="https://api.weipan.cn/2/thumbnails/basic/sandbox/fileapi/1.jpg">/thumbnails</a>
+		</li>
+	</ul>
+</body>
+</html>
+
+
+
+
+
+<form action="https://upload-vdisk.sina.com.cn/2/files/basic/sandbox/fileapi" enctype="multipart/form-data" method=post>
+	<input type="file" name="file">
+	<input type="submit">
+</form>
+
+<script>
+	
+</script>
