@@ -2,14 +2,188 @@
 
 <head>
 <title>微盘测试页面</title>
+<meta lang="zh_CN">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<style>
+label {
+	width: 130px;
+	display: inline-block;
+	text-align: right;
+}
+
+li {
+	list-style: none;
+}
+
+.action {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.action li {
+	display: inline-block;
+	cursor: hand;
+}
+
+.action li:hover {
+	background-color: gray;
+}
+</style>
+<script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+	document.domain = "yanchangyou.cn";
+</script>
 </head>
 <body>
 	<h1>微盘测试页面</h1>
+	<br> 参数配置：
 	<br>
+	<ul class="param">
+		<li>
+			<label>认证URL：</label>
+			<input id="auth_uri" size="100" value="https://auth.sina.com.cn/oauth2/authorize?client_id=1255248993&response_type=token">
+		</li>
+		<li>
+			<label>返回URL：</label>
+			<input id="redirect_uri" size="100" value="http://www.yanchangyou.cn/tech/netdisk/vdisk">
+		</li>
+		<li>
+			<label>token：</label>
+			<input id="token_info" size="100" value="">
+		</li>
+		<li>
+			<label>api_uri_prefix：</label>
+			<input id="api_uri_prefix" size="100" value="https://api.weipan.cn/2">
+<!-- 			<input id="api_uri_prefix" size="100" value="http://fileapi.yanchangyou.cn/2"> -->
+		</li>
+		<li>
+			<label>api_uri_root：</label>
+			<input id="api_uri_root" size="100" value="/basic/sandbox">
+		</li>
+		<li>
+			<label>api_uri_path：</label>
+			<input id="api_uri_path" size="100" value="/fileapi/1.jpg">
+		</li>
+	</ul>
+	<ul class="action">
+		<li id="login">登录微盘</li>
+		<li id="showUserInfo">用户信息</li>
+		<li id="listFile">列出文件</li>
+		<li id="showProperty">显示属性</li>
+		<li id="uploadFile">上传文件</li>
+		<li id="deleteFile">删除文件</li>
+		<li id="shareFile">分享文件</li>
+	</ul>
+	<div id="return_div"></div>
+	<script id="script_script">
+		
+	</script>
+	<script type="text/javascript">
+		// 		var url = "https://api.weipan.cn/2/account/info?access_token=b8fdf06661KSFrS1mWTBv34cyhcf0e2f";
+		// 	    // 创建script标签，设置其属性
+		// 	    var script = document.createElement('script');
+		// 	    script.setAttribute('src', url);
+
+		// 	    debugger;
+
+		function err(obj) {
+			var e = obj;
+			debugger;
+		}
+		function iframe_onload() {
+			// 			alert($("#iframe1").contents().find("body").text());
+			// 			alert($("#iframe").contents().find("body").text().replace("\\\\",""));
+			// 			alert($("#iframe").contents().find("body").text().replace(/(\\\/)/g,"/"));
+			// 			$("#return_div").text($("#iframe").contents().find("body").text().replace(/(\\\/)/g,"/"));
+			// 			eval("var a = " + $("#iframe").contents().find("body").text().replace(/(\\\/)/g,"/"));
+			// 			alert(a['user_name']);
+			// 			alert(decodeURIComponent($("#iframe").contents().find("body").text()));
+			// 			alert(decodeURIComponent($("#iframe").contents().find("body").text()));
+			// 			alert(eval(decodeURIComponent($("#iframe").contents().find("body").text())));
+			// 			alert(eval(decodeURIComponent($("#iframe").contents().find("body").text())).user_name);
+		}
+		function img_onload(event) {
+
+			// 			var e = event;
+			// 			debugger;
+		}
+	</script>
+	<iframe id="iframe1" name="iframe1" src="proxy.html" onload="iframe_onload();"></iframe>
+	<!-- 	<iframe id="iframe" name="iframe" onload="iframe_onload();"></iframe> -->
+	<!-- 	<script type="text/javascript" onerror="err();" onloadeddata="err();" onloadstart="err();" onload="err();" src="https://api.weipan.cn/2/account/info?access_token=b8fdf06661KSFrS1mWTBv34cyhcf0e2f"> -->
+	<!-- // 		alert(1); -->
+	<!-- 	</script> -->
+	<script type="text/javascript">
+		$("#login").click(function() {
+			window.location.href = $("#auth_uri").val() + "&redirect_uri=" + $("#redirect_uri").val();
+		});
+
+		$("#showUserInfo").click(function() {
+			// 			iframe_onload();
+			// 			$("#iframe")[0].src = $("#api_uri_prefix").val() + "/account/info?access_token=" + $("#token_info").val();
+
+			$.ajax({
+				url : $("#api_uri_prefix").val() + "/account/info",
+				type : "GET",
+					            beforeSend: function (request)
+					            {
+					                request.setRequestHeader("host", "api.weipan.cn");
+					            },
+				data : {
+					access_token : $("#token_info").val()
+				},
+				dataType : "JSON",
+				// 				done : function(data, textStatus) {
+				// 					var a = 1;
+				// 					alert(data);
+				// 				},
+				// 				jsonpCallback : function(data, textStatus) {
+				// 					var a = 1;
+				// 					alert(data);
+				// 				},
+				error : function(obj, info, errObj) {
+					
+					debugger;
+					// 					alert("$.ajax()中发生错误：" + info);
+				},
+				success : function(result) {
+					alert(result);
+				}
+			});
+		});
+
+		function setToken() {
+			var url = window.location.href;
+			var begin = url.indexOf("#");
+			var beginToken = url.indexOf("=", begin);
+			var endToken = url.indexOf("&", beginToken);
+			var token = url.substring(beginToken + 1, endToken);
+			$("#token_info").val(token);
+		}
+		setToken();
+	</script>
+
+	<script type="text/javascript">
+		// 		$("#login").click(function() {
+		// 			$.post($("#auth_uri").val(), {
+		// 				client_id : "1255248993",
+		// 				client_secret : "edcc85e06b6dd686c66d6007c634c6a0",
+		// 				redirect_uri : $("#redirect_uri").val(),
+		// 				grant_type : "authorization_code"
+		// 			}, function(data, textStatus) {
+		// 				alert(eval(data.result));
+		// 			}, "json");
+		// 		});
+	</script>
+
+
 	<br>
+
 	<ul>
 		<li>
-			<a href="https://auth.sina.com.cn/oauth2/authorize?client_id=1255248993&redirect_uri=http://www.yanchangyou.cn/tech/netdisk/vdisk&response_type=token">/oauth2/authorize</a>
+			<label>/oauth2/authorize</label>
+			<span id="authorize"></span><a href="https://auth.sina.com.cn/oauth2/authorize?client_id=1255248993&redirect_uri=http://www.yanchangyou.cn/tech/netdisk/vdisk&response_type=token">/oauth2/authorize</a>
 		</li>
 		<li>
 			<a href="https://api.weipan.cn/2/account/info">/account/info</a>
@@ -30,6 +204,7 @@
 			<a href="https://api.weipan.cn/2/thumbnails/basic/sandbox/fileapi/1.jpg">/thumbnails</a>
 		</li>
 	</ul>
+	<iframe name="token"> </iframe>
 </body>
 </html>
 
@@ -37,7 +212,7 @@
 
 
 
-<form action="https://upload-vdisk.sina.com.cn/2/files/basic/sandbox/fileapi" enctype="multipart/form-data" method=post>
+<form action="https://upload-vdisk.sina.com.cn/2/files/basic/sandbox/fileapi?access_token=b8fdf06661KSFrS1mWTBv34cyhcf0e2f&" enctype="multipart/form-data" method=post>
 	<input type="file" name="file">
 	<input type="submit">
 </form>

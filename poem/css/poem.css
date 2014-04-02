@@ -41,30 +41,6 @@
 	cursor: pointer;
 }
 
-.poem:hover {
-/* 	opacity: 1; */
-/* 	transition: opacity 2.5s; */
-/* 	-moz-transition: opacity 2.5s; Firefox 4 */
-/* 	-webkit-transition: opacity 2.5s; Safari 和 Chrome */
-/* 	-o-transition: opacity 2.5s; Opera */
-}
-
-.poem-left,.poem-right {
-	opacity: 0;
-/* 	transition: opacity 3.5s; */
-/* 	-moz-transition: opacity 3.5s; Firefox 4 */
-/* 	-webkit-transition: opacity 3.5s; Safari 和 Chrome */
-/* 	-o-transition: opacity 3.5s; Opera */
-}
-
-.poem-left:hover,.poem-right:hover {
-	opacity: 1;
-	transition: opacity 3.5s;
-	-moz-transition: opacity 3.5s; /* Firefox 4 */
-	-webkit-transition: opacity 3.5s; /* Safari 和 Chrome */
-	-o-transition: opacity 3.5s; /* Opera */
-}
-
 .title {
 	margin-right: 20px;
 	font-size: 65px;

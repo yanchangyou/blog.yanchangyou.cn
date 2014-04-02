@@ -50,6 +50,9 @@
 				poems = result;
 				poem_index = Math.round(poems.length / 2);
 				showAll();
+				
+				$(".poem-left").fadeTo(3000, 0);
+				$(".poem-right").fadeTo(3000, 0);
 			}
 		});
 
@@ -74,13 +77,13 @@
 			poem_index--;
 			showAll();
 			$(".poem").fadeTo(2000, 1);
-			$(".poem-left").fadeTo(500, 0);
+			$(".poem-left").fadeTo(1000, 0);
 		});
 		$(".poem-right").click(function() {
 			poem_index++;
 			showAll();
 			$(".poem").fadeTo(2000, 1);
-			$(".poem-right").fadeTo(500, 0);
+			$(".poem-right").fadeTo(1000, 0);
 		});
 		$(".poem").hover(function() {
 			$(".poem").fadeTo(2000, 1);
@@ -93,7 +96,7 @@
 			// 			$(".poem").fadeTo(2000, 1);
 		});
 		$(".poem-right").hover(function() {
-			$(".poem-right").fadeTo(500, 1);
+			$(".poem-right").fadeTo(1000, 1);
 			$(".poem").fadeTo(2000, 0.5);
 		}, function() {
 			$(".poem-right").fadeTo(2000, 0);
