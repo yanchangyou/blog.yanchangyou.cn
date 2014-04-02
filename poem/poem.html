@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>诗集</title>
+<style type="text/css">
+@import "css/poem.css";
+</style>
+<script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+</head>
+<body>
+	<div class="poem-container">
+		<div class="poem-left">
+			<div class="title">懒春</div>
+			<div class="s1">一抹斜阳惹人醉，</div>
+			<div class="s2">两只蝴蝶紧依偎；</div>
+			<div class="s3">清风敲碎湖面水，</div>
+			<div class="s4">柳枝转身依酣睡。</div>
+			<div class="foot">
+				<span class="author">（残影）</span><span class="date">（2014-02-05）</span>
+			</div>
+		</div>
+		<div class="poem">
+			<div class="title">懒春</div>
+			<div class="s1">一抹斜阳惹人醉，</div>
+			<div class="s2">两只蝴蝶紧依偎；</div>
+			<div class="s3">清风敲碎湖面水，</div>
+			<div class="s4">柳枝转身依酣睡。</div>
+			<div class="foot">
+				<span class="author">（残影）</span><span class="date">（2014-02-05）</span>
+			</div>
+		</div>
+		<div class="poem-right">
+			<div class="title">懒春</div>
+			<div class="s1">一抹斜阳惹人醉，</div>
+			<div class="s2">两只蝴蝶紧依偎；</div>
+			<div class="s3">清风敲碎湖面水，</div>
+			<div class="s4">柳枝转身依酣睡。</div>
+			<div class="foot">
+				<span class="author">（残影）</span><span class="date">（2014-02-05）</span>
+			</div>
+		</div>
+	</div>
+	<script>
+		var poem_index = 0;
+		var poems = [];
+		$.ajax({
+			url : "/poem/data/poem.json",
+			success : function(result) {
+				poems = result;
+				poem_index = Math.round(poems.length / 2);
+				showAll();
+			}
+		});
+
+		function showAll() {
+			if (0 < poem_index && poem_index < poems.length - 2) {
+				show(poems[poem_index - 1], "poem-left");
+				show(poems[poem_index], "poem");
+				show(poems[poem_index + 1], "poem-right");
+			}
+		}
+
+		function show(poem, position) {
+			$("." + position + " .title").text(poem.title);
+			$("." + position + " .s1").text(poem.s1);
+			$("." + position + " .s2").text(poem.s2);
+			$("." + position + " .s3").text(poem.s3);
+			$("." + position + " .s4").text(poem.s4);
+			$("." + position + " .date").text("（" + poem.date + "）");
+		}
+
+		$(".poem-left").click(function() {
+			poem_index--;
+			showAll();
+			$(".poem").fadeTo(2000, 1);
+			$(".poem-left").fadeTo(500, 0);
+		});
+		$(".poem-right").click(function() {
+			poem_index++;
+			showAll();
+			$(".poem").fadeTo(2000, 1);
+			$(".poem-right").fadeTo(500, 0);
+		});
+		$(".poem").hover(function() {
+			$(".poem").fadeTo(2000, 1);
+		});
+		$(".poem-left").hover(function() {
+			$(".poem-left").fadeTo(500, 1);
+			$(".poem").fadeTo(2000, 0.5);
+		}, function() {
+			$(".poem-left").fadeTo(2000, 0);
+			// 			$(".poem").fadeTo(2000, 1);
+		});
+		$(".poem-right").hover(function() {
+			$(".poem-right").fadeTo(500, 1);
+			$(".poem").fadeTo(2000, 0.5);
+		}, function() {
+			$(".poem-right").fadeTo(2000, 0);
+			// 			$(".poem").fadeTo(2000, 1);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+.poem-container {
+	width: 100%;
+	text-align: center;
+}
+
+.poem-left,.poem,.poem-right {
+	display: inline-block;
+	width: 500px;
+	text-align: center;
+	padding-top: 30px;
+	padding-left: 60px;
+	padding-bottom: 30px;
+	margin-top: 20px;
+	background-image: url(../img/poem-bg.jpg);
+}
+
+.poem-left,.poem-right {
+	transform: scale(0.2, 1);
+	-ms-transform: scale(0.2, 1); /* IE 9 */
+	-moz-transform: scale(0.2, 1); /* Firefox */
+	-webkit-transform: scale(0.2, 1); /* Safari and Chrome */
+	-o-transform: scale(0.2, 1); /* Opera */
+}
+
+.poem {
+	margin-right: -250px;
+	margin-left: -250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.poem-left {
+	margin-left: -25%;
+	margin-right: -15%;
+	cursor: pointer;
+}
+
+.poem-right {
+	margin-left: -15%;
+	margin-right: -25%;
+	cursor: pointer;
+}
+
+.poem:hover {
+/* 	opacity: 1; */
+/* 	transition: opacity 2.5s; */
+/* 	-moz-transition: opacity 2.5s; Firefox 4 */
+/* 	-webkit-transition: opacity 2.5s; Safari 和 Chrome */
+/* 	-o-transition: opacity 2.5s; Opera */
+}
+
+.poem-left,.poem-right {
+	opacity: 0;
+/* 	transition: opacity 3.5s; */
+/* 	-moz-transition: opacity 3.5s; Firefox 4 */
+/* 	-webkit-transition: opacity 3.5s; Safari 和 Chrome */
+/* 	-o-transition: opacity 3.5s; Opera */
+}
+
+.poem-left:hover,.poem-right:hover {
+	opacity: 1;
+	transition: opacity 3.5s;
+	-moz-transition: opacity 3.5s; /* Firefox 4 */
+	-webkit-transition: opacity 3.5s; /* Safari 和 Chrome */
+	-o-transition: opacity 3.5s; /* Opera */
+}
+
+.title {
+	margin-right: 20px;
+	font-size: 65px;
+	font-family: 华文隶书;
+	letter-spacing: 50px;
+}
+
+.s1,.s2,.s3,.s4 {
+	margin-top: 10px;
+	font-family: 隶书;
+	font-size: 50px;
+	letter-spacing: 5px;
+}
+
+.foot {
+	margin-top: 50px;
+	font-size: 25px;
+	font-family: 华文楷体;
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+}
