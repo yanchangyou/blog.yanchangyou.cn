@@ -43,8 +43,8 @@
 	</div>
 	<script>
 	<!--垂直居中-->
-		var screenHeight = window.innerHeight;
-		$(".poem-container").css("margin-top", (screenHeight - 500) / 2 -20)
+		var height = $(window).height();
+		$(".poem-container").css("margin-top", (height - 500) / 2 -20)
 
 		var poem_index = 0;
 		var poems = [];
