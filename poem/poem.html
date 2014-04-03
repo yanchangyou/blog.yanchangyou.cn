@@ -7,6 +7,8 @@
 @import "css/poem.css";
 </style>
 <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+<script src="/js/jquery.mobile-1.4.2.min.js"></script>
+<script src="/js/common.js"></script>
 </head>
 <body>
 	<div class="poem-container">
@@ -41,6 +43,20 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- 触屏支持 -->
+	<script type="text/javascript">
+		if (is_touch_device()) {
+			$(".poem-left,.poem-right").hide();
+			$(".poem").on("swipeleft", function() {
+				showRight();
+			});
+			$(".poem").on("swiperight", function() {
+				showLeft();
+			});
+		}
+	</script>
+
 	<script>
 		var poem_index = 0;
 		var poems = [];
@@ -51,8 +67,10 @@
 				poem_index = Math.round(poems.length / 2);
 				showAll();
 
-				$(".poem-left").fadeTo(2000, 0);
-				$(".poem-right").fadeTo(2000, 0);
+				if (!is_touch_device()) {
+					$(".poem-left").fadeTo(2000, 0);
+					$(".poem-right").fadeTo(2000, 0);
+				}
 			}
 		});
 
@@ -73,20 +91,28 @@
 			$("." + position + " .date").text("（" + poem.date + "）");
 		}
 
-		$(".poem-left").click(function() {
+		function showLeft() {
 			if (poem_index > 0) {
 				poem_index--;
 			}
 			$(".poem").fadeTo(1000, 0.1, showAll);
 			$(".poem").fadeTo(1000, 1);
-		});
-		$(".poem-right").click(function() {
+		}
+		function showRight() {
 			if (poem_index < poems.length) {
 				poem_index++;
 			}
 			$(".poem").fadeTo(1000, 0.1, showAll);
 			$(".poem").fadeTo(1000, 1);
+		}
+
+		$(".poem-left").click(function() {
+			showLeft();
 		});
+		$(".poem-right").click(function() {
+			showRight();
+		});
+
 		$(".poem").hover(function() {
 			$(".poem").fadeTo(1000, 1);
 		});
@@ -113,16 +139,23 @@
 					logout : "http://duoshuo.com/logout/"
 				},
 				formPosition : "top"
-
 			};
-			(function() {
+			setTimeout(function() {
 				var ds = document.createElement('script');
 				ds.type = 'text/javascript';
 				ds.async = true;
 				ds.src = 'http://static.duoshuo.com/embed.js';
 				ds.charset = 'UTF-8';
 				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-			})();
+			}, 5000);
+			// 			(function() {
+			// 				var ds = document.createElement('script');
+			// 				ds.type = 'text/javascript';
+			// 				ds.async = true;
+			// 				ds.src = 'http://static.duoshuo.com/embed.js';
+			// 				ds.charset = 'UTF-8';
+			// 				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+			// 			})();
 		</script>
 		<!-- Duoshuo Comment END -->
 	</div>
