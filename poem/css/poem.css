@@ -1,6 +1,7 @@
 .poem-container {
 	width: 100%;
 	text-align: center;
+	margin-top: 30px;
 }
 
 .poem-left,.poem,.poem-right {
