@@ -44,7 +44,7 @@
 	<script>
 	<!--垂直居中-->
 		var height = $(window).height();
-		$(".poem-container").css("margin-top", (height - 500) / 2 -20)
+		$(".poem-container").css("margin-top", (height - 500) / 2 -60)
 
 		var poem_index = 0;
 		var poems = [];
@@ -112,5 +112,31 @@
 		});
 	</script>
 	<script src="/js/google-analytics.js"></script>
+	
+	<div class="comments">
+			<!-- Duoshuo Comment BEGIN -->
+    	<div class="ds-thread"></div>
+      <script type="text/javascript">
+      var duoshuoQuery = {
+      	short_name:"yanchangyou",
+      	 sso: { 
+	       login: "http://duoshuo.com/login/",
+	       logout: "http://duoshuo.com/logout/"
+	   },
+	   formPosition:"top"
+	   
+	   
+	   };
+      	(function() {
+      		var ds = document.createElement('script');
+      		ds.type = 'text/javascript';ds.async = true;
+      		ds.src = 'http://static.duoshuo.com/embed.js';
+      		ds.charset = 'UTF-8';
+      		(document.getElementsByTagName('head')[0] 
+      		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+      	})();
+      	</script>
+      <!-- Duoshuo Comment END -->
+    </div>
 </body>
 </html>
