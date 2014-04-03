@@ -42,7 +42,6 @@
 		</div>
 	</div>
 	<script>
-
 		var poem_index = 0;
 		var poems = [];
 		$.ajax({
@@ -52,8 +51,8 @@
 				poem_index = Math.round(poems.length / 2);
 				showAll();
 
-				$(".poem-left").fadeTo(3000, 0);
-				$(".poem-right").fadeTo(3000, 0);
+				$(".poem-left").fadeTo(2000, 0);
+				$(".poem-right").fadeTo(2000, 0);
 			}
 		});
 
@@ -78,62 +77,56 @@
 			if (poem_index > 0) {
 				poem_index--;
 			}
-			showAll();
-			$(".poem").fadeTo(2000, 1);
-			$(".poem-left").fadeTo(1000, 0);
+			$(".poem").fadeTo(1000, 0.1, showAll);
+			$(".poem").fadeTo(1000, 1);
 		});
 		$(".poem-right").click(function() {
 			if (poem_index < poems.length) {
 				poem_index++;
 			}
-			showAll();
-			$(".poem").fadeTo(2000, 1);
-			$(".poem-right").fadeTo(1000, 0);
+			$(".poem").fadeTo(1000, 0.1, showAll);
+			$(".poem").fadeTo(1000, 1);
 		});
 		$(".poem").hover(function() {
-			$(".poem").fadeTo(2000, 1);
+			$(".poem").fadeTo(1000, 1);
 		});
 		$(".poem-left").hover(function() {
-			$(".poem-left").fadeTo(500, 1);
-			$(".poem").fadeTo(2000, 0.5);
+			$(".poem-left").fadeTo(1000, 1);
 		}, function() {
-			$(".poem-left").fadeTo(2000, 0);
-			// 			$(".poem").fadeTo(2000, 1);
+			$(".poem-left").fadeTo(1000, 0);
 		});
 		$(".poem-right").hover(function() {
 			$(".poem-right").fadeTo(1000, 1);
-			$(".poem").fadeTo(2000, 0.5);
 		}, function() {
-			$(".poem-right").fadeTo(2000, 0);
-			// 			$(".poem").fadeTo(2000, 1);
+			$(".poem-right").fadeTo(1000, 0);
 		});
 	</script>
-	<script src="/js/google-analytics.js"></script>
-	
+
 	<div class="comments">
-			<!-- Duoshuo Comment BEGIN -->
-    	<div class="ds-thread"></div>
-      <script type="text/javascript">
-      var duoshuoQuery = {
-      	short_name:"yanchangyou",
-      	 sso: { 
-	       login: "http://duoshuo.com/login/",
-	       logout: "http://duoshuo.com/logout/"
-	   },
-	   formPosition:"top"
-	   
-	   
-	   };
-      	(function() {
-      		var ds = document.createElement('script');
-      		ds.type = 'text/javascript';ds.async = true;
-      		ds.src = 'http://static.duoshuo.com/embed.js';
-      		ds.charset = 'UTF-8';
-      		(document.getElementsByTagName('head')[0] 
-      		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-      	})();
-      	</script>
-      <!-- Duoshuo Comment END -->
-    </div>
+		<!-- Duoshuo Comment BEGIN -->
+		<div class="ds-thread"></div>
+		<script type="text/javascript">
+			var duoshuoQuery = {
+				short_name : "yanchangyou",
+				sso : {
+					login : "http://duoshuo.com/login/",
+					logout : "http://duoshuo.com/logout/"
+				},
+				formPosition : "top"
+
+			};
+			(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';
+				ds.async = true;
+				ds.src = 'http://static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+			})();
+		</script>
+		<!-- Duoshuo Comment END -->
+	</div>
+
+	<script src="/js/google-analytics.js"></script>
 </body>
 </html>
