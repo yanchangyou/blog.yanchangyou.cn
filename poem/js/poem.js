@@ -1,6 +1,6 @@
 // 触屏支持  begin
 if (is_touch_device()) {
-	$(".poem-left,.poem-right").hide();
+	//$(".poem-left,.poem-right").hide();
 	$(".poem").on("swipeleft", function() {
 		showRight();
 	});
@@ -19,10 +19,10 @@ $.ajax({
 		poem_index = Math.round(poems.length / 2);
 		showAll();
 
-		if (!is_touch_device()) {
+		//if (!is_touch_device()) {
 			$(".poem-left").fadeTo(2000, 0);
 			$(".poem-right").fadeTo(2000, 0);
-		}
+		//}
 	}
 });
 
