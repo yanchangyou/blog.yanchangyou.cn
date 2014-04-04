@@ -27,7 +27,7 @@ $.ajax({
 });
 
 function showAll() {
-	if (0 < poem_index && poem_index < poems.length - 2) {
+	if (0 < poem_index && poem_index < poems.length - 1) {
 		show(poems[poem_index - 1], "poem-left");
 		show(poems[poem_index], "poem");
 		show(poems[poem_index + 1], "poem-right");
@@ -44,14 +44,14 @@ function show(poem, position) {
 }
 
 function showLeft() {
-	if (poem_index > 0) {
+	if (poem_index > 1) {
 		poem_index--;
 	}
 	$(".poem").fadeTo(1000, 0.1, showAll);
 	$(".poem").fadeTo(1000, 1);
 }
 function showRight() {
-	if (poem_index < poems.length) {
+	if (poem_index < poems.length-2) {
 		poem_index++;
 	}
 	$(".poem").fadeTo(1000, 0.1, showAll);
