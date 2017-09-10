@@ -1,18 +1,41 @@
 
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 2017-09-10 15:05:20<br/>
 <br/>
-PC端打开QQ方式1c
+
+PC端打开QQ方式1<br/>
 tencent://Message/?uin=2498908257&site=qq&menu=yes<br/>
 <a href="tencent://Message/?uin=2498908257&site=qq&menu=yes"><span>点击QQ聊天</span></a><br/>
 <br/>
+
 PC端打开QQ方式2<br/>
 mqq://Message/?uin=2498908257&site=qq&menu=yes<br/>
 <a href="tencent://mqq/?uin=2498908257&site=qq&menu=yes"><span>点击QQ聊天</span></a><br/>
 <br/>
+
 打开QQ方式3<br/>
 http://wpa.qq.com/msgrd?v=3&uin=2498908257&site=qq&menu=yes<br>
 <a href="http://wpa.qq.com/msgrd?v=3&uin=2498908257&site=qq&menu=yes">点击QQ聊天</a><br>
 <br/>
+
 WAP打开QQ方式4<br>
 mqqwpa://im/chat?chat_type=wpa&uin=2498908257&version=1&src_type=web&web_src=oicqzone.com<br>
-<a href="mqqwpa://im/chat?chat_type=wpa&uin=2498908257&version=1&src_type=web&web_src=oicqzone.com" target="_blank">点击QQ聊天</a>
+<a href="mqqwpa://im/chat?chat_type=wpa&uin=2498908257&version=1&src_type=web&web_src=www.yanchangyou.cn" target="_blank">点击QQ聊天</a><br>
+
+<br/>
+PC和WAP的兼容写法
+<div>
+  <span class="im-pc"><a href="tencent://Message/?uin=2498908257&site=qq&menu=yes"><span>点击QQ聊天</span></a></span>
+  <span class="im-wap"><a href="mqqwpa://im/chat?chat_type=wpa&uin=2498908257&version=1&src_type=web&web_src=www.yanchangyou.cn"><span>点击QQ聊天</span></a></span>
+</div>
+<script>
+  function getClientType() {
+    return "pc";
+  }
+  if ("pc" === getClientType()) {
+    $(".im-pc").show();
+  } else {
+     $(".im-wap").show();
+  }
+</script>
