@@ -26,12 +26,22 @@ mqqwpa://im/chat?chat_type=wpa&uin=2498908257&version=1&src_type=web&web_src=oic
 <br/>
 PC和WAP的兼容写法
 <div>
-  <span class="im-pc"><a href="tencent://Message/?uin=2498908257&site=qq&menu=yes"><span>点击QQ聊天</span></a></span>
-  <span class="im-wap"><a href="mqqwpa://im/chat?chat_type=wpa&uin=2498908257&version=1&src_type=web&web_src=www.yanchangyou.cn"><span>点击QQ聊天</span></a></span>
+  <span class="im-pc" style="display:none;"><a href="tencent://Message/?uin=2498908257&site=qq&menu=yes"><span>点击QQ聊天</span></a></span>
+  <span class="im-wap" style="display:none;"><a href="mqqwpa://im/chat?chat_type=wpa&uin=2498908257&version=1&src_type=web&web_src=www.yanchangyou.cn"><span>点击QQ聊天</span></a></span>
 </div>
 <script>
   function getClientType() {
-    return "pc";
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    
+    return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ? "wap" : "pc";
   }
   if ("pc" === getClientType()) {
     $(".im-pc").show();
