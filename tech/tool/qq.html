@@ -28,9 +28,11 @@ PC和WAP的兼容写法
 <div>
   <span class="im-pc" style="display:none;"><a href="tencent://Message/?uin=2498908257&site=qq&menu=yes"><span>点击QQ聊天</span></a></span>
   <span class="im-wap" style="display:none;"><a href="mqqwpa://im/chat?chat_type=wpa&uin=2498908257&version=1&src_type=web&web_src=www.yanchangyou.cn"><span>点击QQ聊天</span></a></span>
+  <span class="im-wechat" style="display:none;"><a href="http://wpa.qq.com/msgrd?v=3&uin=2498908257&site=qq&menu=yes">点击QQ聊天</a></span>
 </div>
 <script>
-  function getClientType() {
+  //是否wap
+  function isWap() {
     var sUserAgent = navigator.userAgent.toLowerCase();
     var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
     var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
@@ -41,11 +43,18 @@ PC和WAP的兼容写法
     var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
     var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
     
-    return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ? "wap" : "pc";
+    return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM);
   }
-  if ("pc" === getClientType()) {
-    $(".im-pc").show();
-  } else {
+  //是否微信，微信特殊处理
+  function isWeChat() {
+     var sUserAgent = navigator.userAgent.toLowerCase();
+     return sUserAgent.match(/micromessenger/i) == "micromessenger";
+  }
+  if (isWeChat()) {
+    $(".im-wechat").show();
+  } else if(isWap()) {
      $(".im-wap").show();
+  } else {
+     $(".im-pc").show();
   }
 </script>
